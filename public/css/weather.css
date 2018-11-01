@@ -1,0 +1,8 @@
+body {
+    margin : 0;
+    height: 1500px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: url("D:/MSCS/UXLab/new/bos-website/img/background.jpg");
+}
