@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-  res.render('index', {weather: null, error: null});
+  res.render('index', {weather: null, desc: null, error: null});
 })
   
 
@@ -23,7 +23,8 @@ request(url, function (err, response, body) {
     } else {
         let weather = JSON.parse(body);
         let weatherOutput = `It's ${weather.observations.location[0].observation[0].temperature} degrees in ${city}!`;
-        res.render('index', {weather : weatherOutput, error : null});
+        let tempDesc = `${weather.observations.location[0].observation[0].temperatureDesc}`;
+        res.render('index', {weather : weatherOutput, desc : tempDesc, error : null});
       }
     })
   });

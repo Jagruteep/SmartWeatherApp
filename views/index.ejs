@@ -5,16 +5,36 @@
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="/css/weather.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
+    
+
+
   </head>
   <body>
     <div class="container">
+      <h2>How's the weather today?</h2>
+      <i class='fas fa-bolt'></i>
+      <i class='fas fa-cloud-moon-rain'></i>
+      <i class='fas fa-cloud-rain'></i>
+      <i class='fas fa-cloud-sun'></i>
+      <i class='fas fa-snowflake'></i>
+      <br><br><br>
+
       <fieldset>
         <form action="/" method="post">
-          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required>
-          <input type="submit" class="ghost-button" value="Get Weather">
+          <input name="city" type="text" class="ghost-input" placeholder="Enter a City" required><br><br>
+          <button type="submit" class="button-blue" value="Get Weather">Get Weather</button>
         </form>
         <% if(weather !== null){ %>
-          <p><%= weather %></p>
+          <p class="weatherP"><%= weather %></p>
+        <% } %>
+
+        <% if(desc !== null){ %>
+          <p class="descP"><%= desc %></p>
         <% } %>
 
         <% if(error !== null){ %>
